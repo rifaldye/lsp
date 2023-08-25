@@ -10,7 +10,7 @@
                     <div class="card-header">Data Mahasiswa</div>
     
                     <div class="card-body">
-                        <table>
+                        <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
