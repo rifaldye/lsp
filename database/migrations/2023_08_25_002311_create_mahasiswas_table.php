@@ -17,6 +17,7 @@ class CreateMahasiswasTable extends Migration
             $table->id();
             $table->integer("user_id");
             $table->string("nama");
+            $table->string("alamat_ktp");
             $table->string("alamat");
             $table->string("kecamatan");
             $table->integer("kota");
@@ -26,9 +27,9 @@ class CreateMahasiswasTable extends Migration
             $table->string("kewarganegaraan");
             $table->date("tgl_lahir");
             $table->string("tmp_lahir");
-            $table->int("kota_lahir");
-            $table->int("prov_lahir");
-            $table->string("negara_lahir");
+            $table->integer("kota_lahir")->nullable();
+            $table->integer("prov_lahir")->nullable();
+            $table->string("negara_lahir")->nullable();
             $table->string("jenis_kelamin");
             $table->string("status");
             $table->string("agama");
