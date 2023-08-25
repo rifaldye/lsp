@@ -44,9 +44,12 @@
                                             @if($data->mahasiswa)
                                                 <a href="#" class="btn btn-warning">Lihat Data</a>
                                                 <a href="{{ route("mahasiswa.setujui",["id"=>$data->id]) }}" class="btn btn-success">Setujui</a>
-                                                <a href="{{ route("mahasiswa.tolakx`",["id"=>$data->id]) }}" class="btn btn-danger">Tolak</a>
+                                                <a href="{{ route("mahasiswa.tolak`",["id"=>$data->id]) }}" class="btn btn-danger">Tolak</a>
                                             @endif
                                         @endif
+
+                                        <a href="{{ route("mahasiswa.detail",["id"=>$data->id]) }}" class="btn btn-success">Detail</a>
+
                                     </td>
                                 </tr>
                                 @endforeach

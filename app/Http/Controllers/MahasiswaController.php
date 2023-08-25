@@ -8,6 +8,8 @@ use App\Models\Provinsi;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PDF;
+use Illuminate\Support\Facades\Schema;
 
 class MahasiswaController extends Controller
 {
@@ -98,5 +100,18 @@ class MahasiswaController extends Controller
             'status' => 2
         ]);
         return redirect()->back()->with("success","data berhasil ditolak");
+    }
+
+    public function detail($id){
+        $mahasiswa = User::find($id)->mahasiswa;
+        $data = [
+            'mahasiswa' => $mahasiswa,
+            'column' => $mahasiswa->getFillable(),
+
+        ];
+
+        $pdf = PDF::loadView('mahasiswa.show', $data);
+
+        return $pdf->download($mahasiswa->nama.'.pdf');
     }
 }

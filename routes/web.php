@@ -33,9 +33,10 @@ route::group(["middleware" => ["auth"]], function(){
     Route::group(["middleware" => ["isAdmin"]], function(){
         Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
         Route::get('/mahasiswa/terima/{id}', [App\Http\Controllers\MahasiswaController::class,'setujui'])->name('mahasiswa.setujui');
-            Route::get('/mahasiswa/tolak/{id}', [App\Http\Controllers\MahasiswaController::class,'tolak'])->name('mahasiswa.tolak');
-        
+        Route::get('/mahasiswa/tolak/{id}', [App\Http\Controllers\MahasiswaController::class,'tolak'])->name('mahasiswa.tolak');
+        Route::get('/mahasiswa/{id}', [App\Http\Controllers\MahasiswaController::class,'detail'])->name('mahasiswa.detail');
     });
+
 
     Route::group(["middleware" => ["isUser"]], function(){
     });
